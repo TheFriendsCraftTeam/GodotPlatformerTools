@@ -1,0 +1,446 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/platformer_tools/tools/tools_mainscreen.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.32549, 0.117647, 0.0980392, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.843137, 0.337255, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.356863, 0.0823529, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 0.611765, 0.109804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.133333, 0.164706, 0.188235, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0.4, 0.00392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.184314, 0.184314, 0.184314, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.141176, 0.141176, 0.141176, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.235294, 0.0745098, 0.0745098, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.564706, 0.105882, 0, 1 )
+
+[node name="PlatformerTools" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 940, 400 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tools" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="VBoxContainer" parent="Tools"]
+margin_right = 1016.0
+margin_bottom = 592.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 4
+
+[node name="Settings" type="HBoxContainer" parent="Tools/Container"]
+margin_right = 1016.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="LeftLine" type="HSeparator" parent="Tools/Container/Settings"]
+margin_right = 478.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Tools/Container/Settings"]
+margin_left = 482.0
+margin_right = 533.0
+margin_bottom = 14.0
+size_flags_horizontal = 5
+size_flags_vertical = 1
+text = "Settings"
+align = 1
+
+[node name="RightLine" type="HSeparator" parent="Tools/Container/Settings"]
+margin_left = 537.0
+margin_right = 1016.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="LevelFolder" type="HBoxContainer" parent="Tools/Container"]
+margin_top = 18.0
+margin_right = 1016.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="Tools/Container/LevelFolder"]
+margin_top = 5.0
+margin_right = 78.0
+margin_bottom = 19.0
+text = "Level Folder"
+
+[node name="Option" type="LineEdit" parent="Tools/Container/LevelFolder"]
+margin_left = 82.0
+margin_right = 1016.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "res://levels"
+placeholder_text = "Default res://levels"
+
+[node name="LevelDefault" type="HBoxContainer" parent="Tools/Container"]
+margin_top = 46.0
+margin_right = 1016.0
+margin_bottom = 70.0
+
+[node name="Label" type="Label" parent="Tools/Container/LevelDefault"]
+margin_top = 5.0
+margin_right = 139.0
+margin_bottom = 19.0
+text = "Level Default Settings"
+
+[node name="VSeparator" type="VSeparator" parent="Tools/Container/LevelDefault"]
+margin_left = 143.0
+margin_right = 583.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_styles/separator = SubResource( 1 )
+
+[node name="Settings" type="GridContainer" parent="Tools/Container/LevelDefault"]
+margin_left = 587.0
+margin_right = 1016.0
+margin_bottom = 24.0
+size_flags_vertical = 3
+columns = 5
+
+[node name="TileSizeLabel" type="Label" parent="Tools/Container/LevelDefault/Settings"]
+margin_top = 5.0
+margin_right = 88.0
+margin_bottom = 19.0
+text = "Tile size (X, Y)"
+
+[node name="TileSize" type="HBoxContainer" parent="Tools/Container/LevelDefault/Settings"]
+margin_left = 92.0
+margin_right = 244.0
+margin_bottom = 24.0
+
+[node name="X" type="SpinBox" parent="Tools/Container/LevelDefault/Settings/TileSize"]
+margin_right = 74.0
+margin_bottom = 24.0
+value = 8.0
+allow_greater = true
+align = 2
+suffix = "px"
+
+[node name="Y" type="SpinBox" parent="Tools/Container/LevelDefault/Settings/TileSize"]
+margin_left = 78.0
+margin_right = 152.0
+margin_bottom = 24.0
+value = 8.0
+allow_greater = true
+align = 2
+suffix = "px"
+
+[node name="VSeparator" type="VSeparator" parent="Tools/Container/LevelDefault/Settings"]
+margin_left = 248.0
+margin_right = 252.0
+margin_bottom = 24.0
+
+[node name="ChunkSizeLabel" type="Label" parent="Tools/Container/LevelDefault/Settings"]
+margin_left = 256.0
+margin_top = 5.0
+margin_right = 325.0
+margin_bottom = 19.0
+text = "Chunk size"
+
+[node name="ChunkSize" type="SpinBox" parent="Tools/Container/LevelDefault/Settings"]
+margin_left = 329.0
+margin_right = 429.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+max_value = 1024.0
+value = 16.0
+allow_greater = true
+suffix = "tiles"
+
+[node name="UpdateSettings" type="Button" parent="Tools/Container"]
+margin_top = 74.0
+margin_right = 1016.0
+margin_bottom = 94.0
+text = "Save and update settings"
+
+[node name="LevelTools" type="HBoxContainer" parent="Tools/Container"]
+margin_top = 98.0
+margin_right = 1016.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="LeftLine" type="HSeparator" parent="Tools/Container/LevelTools"]
+margin_right = 468.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Tools/Container/LevelTools"]
+margin_left = 472.0
+margin_right = 544.0
+margin_bottom = 14.0
+size_flags_horizontal = 5
+size_flags_vertical = 1
+text = "Level Tools"
+align = 1
+
+[node name="RightLine" type="HSeparator" parent="Tools/Container/LevelTools"]
+margin_left = 548.0
+margin_right = 1016.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="NewLevel" type="HBoxContainer" parent="Tools/Container"]
+margin_top = 116.0
+margin_right = 1016.0
+margin_bottom = 140.0
+
+[node name="Label" type="Label" parent="Tools/Container/NewLevel"]
+margin_top = 5.0
+margin_right = 66.0
+margin_bottom = 19.0
+text = "New Level"
+
+[node name="Id" type="LineEdit" parent="Tools/Container/NewLevel"]
+margin_left = 70.0
+margin_right = 959.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+placeholder_text = "Name (id)"
+
+[node name="Button" type="Button" parent="Tools/Container/NewLevel"]
+margin_left = 963.0
+margin_right = 1016.0
+margin_bottom = 24.0
+text = "Create"
+
+[node name="RenameLevel" type="HBoxContainer" parent="Tools/Container"]
+margin_top = 144.0
+margin_right = 1016.0
+margin_bottom = 168.0
+
+[node name="Label" type="Label" parent="Tools/Container/RenameLevel"]
+margin_top = 5.0
+margin_right = 101.0
+margin_bottom = 19.0
+text = "Rename a Level"
+
+[node name="Level" type="OptionButton" parent="Tools/Container/RenameLevel" groups=[
+"LevelSelection",
+]]
+margin_left = 105.0
+margin_right = 344.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+text = "Level"
+align = 1
+expand_icon = true
+
+[node name="Id" type="LineEdit" parent="Tools/Container/RenameLevel"]
+margin_left = 348.0
+margin_right = 948.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+placeholder_text = "New Name (id)"
+
+[node name="Button" type="Button" parent="Tools/Container/RenameLevel"]
+margin_left = 952.0
+margin_right = 1016.0
+margin_bottom = 24.0
+text = "Rename"
+
+[node name="Note" type="RichTextLabel" parent="Tools/Container"]
+margin_top = 172.0
+margin_right = 1016.0
+margin_bottom = 187.0
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right][b][color=aqua]Note:[/color][/b] IDs will be [i]snake_cased[/i], but they will be displayed with the [code]capitalize()[/code] function. Read more in [url=https://docs.godotengine.org/en/stable/classes/class_string.html?#class-string-method-capitalize]the docs[/url].	"
+text = "Note: IDs will be snake_cased, but they will be displayed with the capitalize() function. Read more in the docs.	"
+fit_content_height = true
+scroll_active = false
+
+[node name="CustomLevelData" type="HBoxContainer" parent="Tools/Container"]
+margin_top = 191.0
+margin_right = 1016.0
+margin_bottom = 211.0
+
+[node name="Label" type="Label" parent="Tools/Container/CustomLevelData"]
+margin_top = 3.0
+margin_right = 120.0
+margin_bottom = 17.0
+text = "Custom Level Data"
+
+[node name="Data" type="GridContainer" parent="Tools/Container/CustomLevelData"]
+margin_left = 124.0
+margin_right = 976.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="NoData" type="Label" parent="Tools/Container/CustomLevelData/Data"]
+margin_right = 852.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "No data has been created or discovered yet, create custom variables for your levels (like \"display_name\" or \"difficulty\")!"
+align = 1
+valign = 1
+
+[node name="Update" type="Button" parent="Tools/Container/CustomLevelData"]
+margin_left = 980.0
+margin_right = 992.0
+margin_bottom = 20.0
+
+[node name="New" type="Button" parent="Tools/Container/CustomLevelData"]
+margin_left = 996.0
+margin_right = 1016.0
+margin_bottom = 20.0
+text = "+"
+
+[node name="ImportExportLevels" type="HBoxContainer" parent="Tools/Container"]
+margin_top = 215.0
+margin_right = 1016.0
+margin_bottom = 235.0
+
+[node name="Label" type="Label" parent="Tools/Container/ImportExportLevels"]
+margin_top = 3.0
+margin_right = 146.0
+margin_bottom = 17.0
+text = "Import / Exoprt a Level"
+
+[node name="Import" type="Button" parent="Tools/Container/ImportExportLevels"]
+margin_left = 150.0
+margin_right = 493.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Import"
+
+[node name="Export" type="Button" parent="Tools/Container/ImportExportLevels"]
+margin_left = 497.0
+margin_right = 840.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Export"
+
+[node name="OptionButton" type="OptionButton" parent="Tools/Container/ImportExportLevels" groups=[
+"LevelSelection",
+]]
+margin_left = 844.0
+margin_right = 1016.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "Level to export"
+align = 1
+
+[node name="UpdateLevels" type="Button" parent="Tools/Container"]
+margin_top = 239.0
+margin_right = 1016.0
+margin_bottom = 259.0
+text = "Update/Refresh Levels"
+
+[node name="Delete" type="HBoxContainer" parent="Tools/Container"]
+margin_top = 263.0
+margin_right = 1016.0
+margin_bottom = 285.0
+
+[node name="Label" type="Label" parent="Tools/Container/Delete"]
+margin_top = 4.0
+margin_right = 92.0
+margin_bottom = 18.0
+text = "Delete a Level"
+
+[node name="Level" type="OptionButton" parent="Tools/Container/Delete" groups=[
+"LevelSelection",
+]]
+margin_left = 96.0
+margin_right = 401.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "Level"
+align = 1
+expand_icon = true
+
+[node name="Button" type="Button" parent="Tools/Container/Delete"]
+margin_left = 405.0
+margin_right = 1016.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_colors/font_color_disabled = Color( 0.145098, 0.145098, 0.145098, 1 )
+custom_colors/font_color = Color( 1, 0.584314, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0.772549, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
+text = "DELETE (no undo!)"
+[connection signal="pressed" from="Tools/Container/UpdateSettings" to="." method="_on_settings_updated"]
+[connection signal="pressed" from="Tools/Container/NewLevel/Button" to="." method="_on_level_created"]
+[connection signal="pressed" from="Tools/Container/RenameLevel/Button" to="." method="_on_level_renamed"]
+[connection signal="pressed" from="Tools/Container/CustomLevelData/Update" to="." method="_on_lvl_data_entry_created"]
+[connection signal="pressed" from="Tools/Container/CustomLevelData/New" to="." method="_on_lvl_data_entry_created"]
+[connection signal="pressed" from="Tools/Container/UpdateLevels" to="." method="update_levels"]
+[connection signal="pressed" from="Tools/Container/Delete/Button" to="." method="_on_level_deleted"]

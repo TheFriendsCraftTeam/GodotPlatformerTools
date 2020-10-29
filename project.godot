@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "ControlledBody2D",
+"language": "GDScript",
+"path": "res://addons/platformer_tools/classes/controlled_body.gd"
+}, {
+"base": "Object",
+"class": "HandyFunctions",
+"language": "GDScript",
+"path": "res://addons/platformer_tools/classes/handy_functions.gd"
+}, {
+"base": "Node2D",
+"class": "Level",
+"language": "GDScript",
+"path": "res://addons/platformer_tools/classes/level.gd"
+} ]
+_global_script_class_icons={
+"ControlledBody2D": "",
+"HandyFunctions": "",
+"Level": "res://addons/platformer_tools/classes/level_icon.svg"
+}
+
+[application]
+
+config/name="PlatformerTools"
+config/icon="res://icon.png"
+
+[autoload]
+
+GameManager="*res://addons/platformer_tools/classes/game_manager.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "godot-plugin-refresher", "platformer_tools" )
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

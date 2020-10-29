@@ -15,3 +15,6 @@ data_*/
 addons/*/
 !addons/platformer_tools/
 levels/
+
+# Linux ignores
+.directory

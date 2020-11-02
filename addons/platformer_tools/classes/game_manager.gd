@@ -3,7 +3,6 @@ extends Node2D
 #Not putting class_name because it's a Singleton, but it's GameManager
 
 
-var default_level
 var levels := {}
 
 
@@ -70,3 +69,43 @@ static func make_level(new_level_id: String, options: Dictionary, custom_data: D
 	level_file.store_var(level_data, true)
 	level_file.close()
 	print("Level made succesfully!! :D")
+
+
+static func make_world(new_world_id: String, options: Dictionary, custom_data: Dictionary = {}):
+	var snaked_id = HandyFunctions.snake_case(new_world_id)
+	var world_file := File.new()
+	var world_path: String = String(options.world_folder + "/" + snaked_id + ".lvl")
+	var world_data := WorldMap.new()
+	
+	if new_world_id == "":
+		print("ERROR! Must insert a name first")
+		return
+	
+	if world_file.file_exists(world_path):
+		print("ERROR! The file at the path already exist!")
+		return
+	
+	if world_file.open(world_path, File.WRITE):
+		var dir := Directory.new()
+		dir.make_dir(options.world_folder)
+		world_file.open(world_path, File.WRITE)
+	
+	var dir := Directory.new()
+	if dir.make_dir(options.world_folder + "/" + snaked_id + "_chunks"):
+		print("OH SHIT, world_cunks Directory is NOT GOOD, retrying...")
+		if dir.make_dir(options.world_folder + "/" + snaked_id + "_chunks"):
+			print("NOPE, still an error we get, let's crash. :P")
+			return
+	
+	world_data.chunks_folder = options.world_folder + "/" + snaked_id + "_chunks"
+	world_data.tile_size = options.world_defaults.tile_size
+	world_data.chunk_size = options.world_defaults.chunk_size
+	world_data.custom_data = custom_data
+	
+	world_file.store_var(world_data, true)
+	world_file.close()
+	print("world made succesfully!! :D")
+
+
+static func rename_level(old_id: String, new_id: String):
+	pass

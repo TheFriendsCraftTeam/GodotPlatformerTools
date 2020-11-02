@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Level",
 "language": "GDScript",
 "path": "res://addons/platformer_tools/classes/level.gd"
+}, {
+"base": "Node2D",
+"class": "WorldMap",
+"language": "GDScript",
+"path": "res://addons/platformer_tools/classes/world_map.gd"
 } ]
 _global_script_class_icons={
 "ControlledBody2D": "",
 "HandyFunctions": "",
-"Level": "res://addons/platformer_tools/classes/level_icon.svg"
+"Level": "res://addons/platformer_tools/classes/level_icon.svg",
+"WorldMap": ""
 }
 
 [application]

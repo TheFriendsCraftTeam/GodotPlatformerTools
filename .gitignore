@@ -14,7 +14,8 @@ data_*/
 # Custom ignores, to keep just the essential stuff
 addons/*/
 !addons/platformer_tools/
-levels/
+*levels*/
+# WARNING!! Do NOT make some folder that contans the name "levels"
 
 # Linux ignores
 .directory

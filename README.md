@@ -1,7 +1,15 @@
 # Godot platformer tools :wrench:
 
 ## What?
-This is an addon for the Godot game engine, made by @DaylightDr3amer and thought to make the creation of 2D games (especially platformers) easier and quicker, without loosing control.
+This is an plugin for the Godot game engine, made by @DaylightDr3amer and thought to make the creation of 2D games (especially platformers) easier and quicker, without loosing control.
+
+## How it works?
+There are three main classes:
+- **GameManager**: As you can tell by the name, this Singleton manages everything related to the plugin and it has some useful functions
+- **Level**: A Class loaded by the GameManager that keeps all the information inside a Level (tiles, enemies, chests, etc.) that are divided in chunks, to prevent memory overload with large levels.
+- **Areas**: These are groups of levels that shares some resources (Background, tiles images, enemies scenes, etc.) and their objective is to make transitions between levels faster.
+
+All of them (and the other classes), work together and are "controlled" with the plugin interface and saved in a WorldMap file (file.map).
 
 ## WAIT!!
 This addon (as you can probably see) is current in development version and it's not meant to be used in any game (for now), but if you just want to give it a look and maybe add you own stuff I won't stop you. :wink:
@@ -11,12 +19,12 @@ This addon (as you can probably see) is current in development version and it's 
 - [x] It exist!!
 
 ### Planned:
-- [ ] Level management **30%**
-- [ ] Background loading
-- [ ] Assets management
+- [ ] Level management **40%**
 - [ ] Custom level editor
+- [ ] Assets management
+- [ ] Background loading
+- [ ] Stage, cut-scenes, music and player management **10%**
 - [ ] ***MAYBE*** some integrations with other level editors (like [LEd](https://deepnight.net/tools/led-2d-level-editor/) or [Tiled](https://www.mapeditor.org/))
-- [ ] Stage, cut-scenes, music and player management
 - [ ] And much more...
 
 ## !!NEWS!!

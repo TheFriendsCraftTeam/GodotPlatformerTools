@@ -11,7 +11,6 @@ func _enter_tree() -> void:
 	tools_instance = tools.instance()
 	tools_instance.options = options# This is not using duplicate() function so the two variables are linked
 	get_editor_interface().get_editor_viewport().add_child(tools_instance)
-	tools_instance.get_node("Tools/Container/CustomLevelData/Update").icon = get_editor_interface().get_base_control().get_icon("Reload", "EditorIcons")
 	make_visible(false)
 
 

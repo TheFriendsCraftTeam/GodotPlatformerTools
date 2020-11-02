@@ -4,6 +4,7 @@
 This is an plugin for the Godot game engine, made by @DaylightDr3amer and thought to make the creation of 2D games (especially platformers) easier and quicker, without loosing control.
 
 ## How it works?
+![Level Idea](https://github.com/TheFriendsCraftTeam/GodotPlatformerTools/blob/main/web/level_system.png)
 There are three main classes:
 - **GameManager**: As you can tell by the name, this Singleton manages everything related to the plugin and it has some useful functions
 - **Level**: A Class loaded by the GameManager that keeps all the information inside a Level (tiles, enemies, chests, etc.) that are divided in chunks, to prevent memory overload with large levels.

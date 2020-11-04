@@ -2,7 +2,9 @@ tool
 extends Control
 
 
-const default_options := {"level_folder": "res://levels",
+const default_options := {"level_folder": "res://world/levels",
+		"world_folder": "res://world/maps",
+		"area_folder": "res://world/areas",
 		"level_defaults": {"tile_size": Vector2(8, 8), "chunk_size": 256},
 		}
 var options := {}
@@ -11,7 +13,7 @@ var levels_ids := []
 
 
 func _ready() -> void:
-	$Tools/TopPanel/ToggleSidePanel.icon = get_icon("ArrowRight", "EditorIcons")
+	$Tools/TopPanel/ToggleSidePanel.icon = get_icon("Forward", "EditorIcons")
 	options = default_options.duplicate()# Load default options
 	
 	var options_file := File.new()
@@ -55,17 +57,10 @@ func _on_level_created() -> void:
 	update_levels()
 
 
-func _on_level_renamed() -> void:
-	pass # Replace with function body.
-
-
-func _on_level_deleted() -> void:
-	pass # Replace with function body.
-
-
-func _on_lvl_data_entry_created() -> void:
-	pass # Replace with function body.
-
 
 func _on_SidePanel_toggled(button_pressed: bool) -> void:
 	$Tools/CenterPanel/SidePanel.visible = button_pressed
+
+
+func _on_MapEditor_connection_request(from: String, from_slot: int, to: String, to_slot: int) -> void:
+	$Tools/CenterPanel/Editors/MapEditor.connect_node(from, from_slot, to, to_slot)

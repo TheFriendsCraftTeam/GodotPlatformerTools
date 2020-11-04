@@ -10,7 +10,7 @@ There are three main classes:
 - **Level**: A Class loaded by the GameManager that keeps all the information inside a Level (tiles, enemies, chests, etc.) that are divided in chunks, to prevent memory overload with large levels.
 - **Areas**: These are groups of levels that shares some resources (Background, tiles images, enemies scenes, etc.) and their objective is to make transitions between levels faster.
 
-All of them (and the other classes), work together and are "controlled" with the plugin interface and saved in a WorldMap file (file.map).
+All of them (and the other classes), work together and are "controlled" with the plugin interface and these interactions saved in a WorldMap file (file.map).
 
 ## WAIT!!
 This addon (as you can probably see) is current in development version and it's not meant to be used in any game (for now), but if you just want to give it a look and maybe add you own stuff I won't stop you. :wink:
@@ -28,6 +28,11 @@ This addon (as you can probably see) is current in development version and it's 
 - [ ] ***MAYBE*** some integrations with other level editors (like [LEd](https://deepnight.net/tools/led-2d-level-editor/) or [Tiled](https://www.mapeditor.org/))
 - [ ] And much more...
 
-## !!NEWS!!
+## !!BREAKING NEWS!!
+### New UI, and it WORKS!!
+Well, sort of... :sweat_smile: Now the node-based system seems fitting better than that good ol' sh\*t. Now it's time to start making the buttons working. Fortunately most of the functions are already made, so it should be easy (**spoiler alert**, it won't be easy :grin:).
+> Dieg0, out
+
 ### Yes, there are also here [29 Oct 2020]
 **FIRST COMMIT HERE WE GOOOOO!!!** Up there you saw all you need to know about it. This plugin is planned to be used with BigFlatPanda, but I'll make sure that it runs on other games, so don't worry, be happy!! :upside_down_face:
+> The one and only DIEG0!!

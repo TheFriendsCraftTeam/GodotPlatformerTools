@@ -20,16 +20,21 @@ This addon (as you can probably see) is current in development version and it's 
 - [x] It exist!!
 
 ### Planned:
-- [ ] Level management **40%**
+- [ ] Level management **45%**
 - [ ] Custom level editor
 - [ ] Assets management
 - [ ] Background loading
 - [ ] Stage, cut-scenes, music and player management **10%**
-- [ ] ***MAYBE*** some integrations with other level editors (like [LEd](https://deepnight.net/tools/led-2d-level-editor/) or [Tiled](https://www.mapeditor.org/))
+- [ ] ***MAYBE*** some integrations with other level editors (like [LDtk](https://deepnight.net/tools/ldtk-2d-level-editor/) or [Tiled](https://www.mapeditor.org/))
 - [ ] And much more...
 
 ## !!BREAKING NEWS!!
-### New UI, and it WORKS!!
+### Functions improvements, artwork and other stuff [10 Nov 2020]
+![UI](https://github.com/TheFriendsCraftTeam/GodotPlatformerTools/blob/main/web/screenshot_1.png)
+After a day of *really* focused development, now I'm here to introduce THE SAME ADDON (or plugin) WITH THE SAME FEATURES OF THE LAST COMMIT BUT NOW WITH MINOR IMPROVEMENTS!! (deep breath) Now every Level has a default artwork (made by me of course) as a little thumbnail (and soon you will be able to modify it). Also now you can annihilate the levels that you don't want anymore!
+> Still me Dieg0, the Dev
+
+### New UI, and it (doesn't) WORKS!!
 Well, sort of... :sweat_smile: Now the node-based system seems fitting better than that good ol' sh\*t. Now it's time to start making the buttons working. Fortunately most of the functions are already made, so it should be easy (**spoiler alert**, it won't be easy :grin:).
 > Dieg0, out
 

@@ -97,11 +97,6 @@ static func make_world(new_world_id: String, options: Dictionary, custom_data: D
 			print("NOPE, still an error we get, let's crash. :P")
 			return
 	
-	world_data.chunks_folder = options.world_folder + "/" + snaked_id + "_chunks"
-	world_data.tile_size = options.world_defaults.tile_size
-	world_data.chunk_size = options.world_defaults.chunk_size
-	world_data.custom_data = custom_data
-	
 	world_file.store_var(world_data, true)
 	world_file.close()
 	print("world made succesfully!! :D")
@@ -109,3 +104,11 @@ static func make_world(new_world_id: String, options: Dictionary, custom_data: D
 
 static func rename_level(old_id: String, new_id: String):
 	pass
+
+
+static func delete_level(id: String, options: Dictionary):
+	print("Deleting " + id.capitalize())
+	var dir := Directory.new()
+	print(dir.remove(options.level_folder + "/" + id + ".lvl"))
+	print(dir.remove(options.level_folder + "/" + id + "_chunks"))
+	print("Level deleted if both numbers are 0 (OK)")

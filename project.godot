@@ -47,7 +47,7 @@ GameManager="*res://addons/platformer_tools/classes/game_manager.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "godot-plugin-refresher", "platformer_tools" )
+enabled=PoolStringArray( "platformer_tools" )
 
 [importer_defaults]
 

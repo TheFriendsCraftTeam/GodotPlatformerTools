@@ -20,15 +20,21 @@ This addon (as you can probably see) is current in development version and it's 
 - [x] It exist!!
 
 ### Planned:
-- [ ] Level management **45%**
-- [ ] Custom level editor
+- [ ] WorldMap editor **60%**
+- [ ] Areas management
 - [ ] Assets management
+- [ ] Some assets creation tools **5%**
 - [ ] Background loading
+- [ ] Custom level editor **??**
 - [ ] Stage, cut-scenes, music and player management **10%**
 - [ ] ***MAYBE*** some integrations with other level editors (like [LDtk](https://deepnight.net/tools/ldtk-2d-level-editor/) or [Tiled](https://www.mapeditor.org/))
 - [ ] And much more...
 
 ## !!BREAKING NEWS!!
+### Level deletion function, and other minor improvements [27 Nov 2020]
+Stuff, stuff and other stuff... Now levels can be deleted, and soon you'll be able to rename them. After that I'll focus on managing the Areas system (some sort of tags so I think it will be easy) and after that the WorldMap files. Now it's late so I can't write more. Bye!
+> Yawn, Dieg0
+
 ### Functions improvements, artwork and other stuff [10 Nov 2020]
 ![UI](https://github.com/TheFriendsCraftTeam/GodotPlatformerTools/blob/main/web/screenshot_1.png)
 After a day of *really* focused development, now I'm here to introduce THE SAME ADDON (or plugin) WITH THE SAME FEATURES OF THE LAST COMMIT BUT NOW WITH MINOR IMPROVEMENTS!! (deep breath) Now every Level has a default artwork (made by me of course) as a little thumbnail (and soon you will be able to modify it). Also now you can annihilate the levels that you don't want anymore!

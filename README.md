@@ -1,5 +1,8 @@
 # Godot platformer tools :wrench:
 
+# LAST MINUTE WARNING!!
+## Seems like the plugin has broken code (sorry) and it doesn't work AT ALL, or it's very buggy, so please don't download it until the next update
+
 ## What?
 This is an plugin for the Godot game engine, made by @DaylightDr3amer and thought to make the creation of 2D games (especially platformers) easier and quicker, without loosing control.
 

@@ -7,7 +7,7 @@
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
-[sub_resource type="Image" id=8]
+[sub_resource type="Image" id=7]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
@@ -19,18 +19,18 @@ data = {
 [sub_resource type="ImageTexture" id=3]
 flags = 4
 flags = 4
-image = SubResource( 8 )
+image = SubResource( 7 )
 size = Vector2( 16, 16 )
 
 [sub_resource type="ButtonGroup" id=4]
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 16, 16 )
 margin_right = 16.0
 margin_top = 16.0
 
-[sub_resource type="StyleBoxEmpty" id=7]
+[sub_resource type="StyleBoxEmpty" id=6]
 
 [node name="PlatformerTools" type="Control"]
 anchor_right = 1.0
@@ -152,22 +152,22 @@ margin_bottom = 594.0
 size_flags_vertical = 3
 
 [node name="SidePanel" type="PanelContainer" parent="Tools/CenterPanel"]
-margin_right = 177.0
+margin_right = 178.0
 margin_bottom = 568.0
 rect_min_size = Vector2( 160, 0 )
 
 [node name="Container" type="VBoxContainer" parent="Tools/CenterPanel/SidePanel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 170.0
+margin_right = 171.0
 margin_bottom = 561.0
 
 [node name="Top" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Container"]
-margin_right = 163.0
+margin_right = 164.0
 margin_bottom = 20.0
 
 [node name="SizeBar" type="HSlider" parent="Tools/CenterPanel/SidePanel/Container/Top"]
-margin_right = 81.0
+margin_right = 82.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -179,8 +179,8 @@ value = 90.0
 scrollable = false
 
 [node name="NewLvl" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Top"]
-margin_left = 85.0
-margin_right = 163.0
+margin_left = 86.0
+margin_right = 164.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
@@ -188,14 +188,14 @@ text = "New Level"
 
 [node name="Levels" type="ScrollContainer" parent="Tools/CenterPanel/SidePanel/Container"]
 margin_top = 24.0
-margin_right = 163.0
+margin_right = 164.0
 margin_bottom = 554.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="Container" type="VBoxContainer" parent="Tools/CenterPanel/SidePanel/Container/Levels"]
-margin_right = 163.0
+margin_right = 164.0
 margin_bottom = 530.0
 rect_min_size = Vector2( 160, 0 )
 size_flags_horizontal = 3
@@ -205,11 +205,12 @@ __meta__ = {
 }
 
 [node name="Lvl" type="VBoxContainer" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container"]
-margin_right = 163.0
+visible = false
+margin_right = 164.0
 margin_bottom = 156.0
 
 [node name="LabelContainer" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl"]
-margin_right = 163.0
+margin_right = 164.0
 margin_bottom = 14.0
 custom_constants/separation = 2
 
@@ -220,13 +221,13 @@ text = "Test Level Tab"
 
 [node name="Line" type="HSeparator" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/LabelContainer"]
 margin_left = 93.0
-margin_right = 163.0
+margin_right = 164.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 
 [node name="Thumbnail" type="TextureRect" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl"]
 margin_top = 18.0
-margin_right = 163.0
+margin_right = 164.0
 margin_bottom = 108.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -236,11 +237,11 @@ stretch_mode = 6
 [node name="Button" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/Thumbnail"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 7 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
 disabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -248,44 +249,43 @@ __meta__ = {
 
 [node name="EditAndAdd" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl"]
 margin_top = 112.0
-margin_right = 163.0
+margin_right = 164.0
 margin_bottom = 132.0
 
 [node name="Edit" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/EditAndAdd"]
-margin_right = 55.0
+margin_right = 56.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 disabled = true
 text = "Edit"
 
 [node name="AddNode" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/EditAndAdd"]
-margin_left = 59.0
-margin_right = 163.0
+margin_left = 60.0
+margin_right = 164.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Add as a Node"
 
 [node name="RenameAndDelete" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl"]
 margin_top = 136.0
-margin_right = 163.0
+margin_right = 164.0
 margin_bottom = 156.0
 
 [node name="Rename" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/RenameAndDelete"]
-margin_right = 64.0
+margin_right = 65.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
-disabled = true
 text = "Rename"
 
 [node name="Delete" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/RenameAndDelete"]
-margin_left = 68.0
-margin_right = 163.0
+margin_left = 69.0
+margin_right = 164.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "DELETE Level"
 
 [node name="Editors" type="Control" parent="Tools/CenterPanel"]
-margin_left = 189.0
+margin_left = 190.0
 margin_right = 1018.0
 margin_bottom = 568.0
 
@@ -350,8 +350,13 @@ margin_right = 154.0
 margin_bottom = 38.0
 text = "End of the World"
 
-[node name="LvlNode" type="GraphNode" parent="Tools/CenterPanel/Editors/MapEditor"]
+[node name="HiddenNodes" type="Control" parent="Tools/CenterPanel/Editors/MapEditor"]
 visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LvlNode" type="GraphNode" parent="Tools/CenterPanel/Editors/MapEditor/HiddenNodes"]
 margin_left = 350.0
 margin_top = 150.0
 margin_right = 566.0
@@ -371,7 +376,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Thumbnail" type="TextureRect" parent="Tools/CenterPanel/Editors/MapEditor/LvlNode"]
+[node name="Thumbnail" type="TextureRect" parent="Tools/CenterPanel/Editors/MapEditor/HiddenNodes/LvlNode"]
 margin_left = 16.0
 margin_top = 24.0
 margin_right = 200.0
@@ -414,10 +419,10 @@ placeholder_text = "Level Name [id] (cannot be blank)"
 visible = false
 margin_top = 28.0
 margin_right = 392.0
-margin_bottom = 58.0
+margin_bottom = 43.0
 bbcode_enabled = true
-bbcode_text = "[color=red]Dude, I told you one simple thing: the level name (or id) CANNOT BE BLANK!! Come on!"
-text = "Dude, I told you one simple thing: the level name (or id) CANNOT BE BLANK!! Come on!"
+bbcode_text = "[color=red]Error goes here"
+text = "Error goes here"
 fit_content_height = true
 scroll_active = false
 
@@ -431,7 +436,7 @@ size_flags_vertical = 10
 margin_right = 194.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
-text = "Ops, wrong button..."
+text = "Whops, wrong button..."
 
 [node name="Ok" type="Button" parent="NewLvl/Container/Buttons"]
 margin_left = 198.0
@@ -470,7 +475,7 @@ __meta__ = {
 [node name="LvlName" type="LineEdit" parent="RenameLvl/Container"]
 margin_right = 392.0
 margin_bottom = 24.0
-placeholder_text = "New Name [id] (cannot be blank)"
+placeholder_text = "New Name [id] (cannot be blank or another Level's)"
 
 [node name="Error" type="RichTextLabel" parent="RenameLvl/Container"]
 visible = false
@@ -478,8 +483,8 @@ margin_top = 28.0
 margin_right = 392.0
 margin_bottom = 58.0
 bbcode_enabled = true
-bbcode_text = "[color=red]Dude, I told you one simple thing: the level name (or id) CANNOT BE BLANK!! Come on!"
-text = "Dude, I told you one simple thing: the level name (or id) CANNOT BE BLANK!! Come on!"
+bbcode_text = "[color=red]Ehm, look up. It's written that the new id can't be blank or another level's id. Try again."
+text = "Ehm, look up. It's written that the new id can't be blank or another level's id. Try again."
 fit_content_height = true
 scroll_active = false
 
@@ -493,7 +498,7 @@ size_flags_vertical = 10
 margin_right = 194.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
-text = "Ops, changed idea..."
+text = "Um, changed idea..."
 
 [node name="Ok" type="Button" parent="RenameLvl/Container/Buttons"]
 margin_left = 198.0
@@ -534,8 +539,19 @@ margin_right = 492.0
 margin_bottom = 108.0
 size_flags_vertical = 3
 bbcode_enabled = true
-bbcode_text = "So, you want to [color=red]DELETE A LEVEL[/color], an horrible act against the Level community that only the most evil being could do. If you click that button, the Level will be gone [color=red]FOREVER[/color]. Also this can cause some crashes or bugs  in your game if you don't remove it from the WorldMap. Well, now it's your choice, life or death. Be wise."
-text = "So, you want to DELETE A LEVEL, an horrible act against the Level community that only the most evil being could do. If you click that button, the Level will be gone FOREVER. Also this can cause some crashes or bugs  in your game if you don't remove it from the WorldMap. Well, now it's your choice, life or death. Be wise."
+bbcode_text = "So, you want to [color=red]DELETE A LEVEL[/color]. If you click that button, the Level will be gone [color=red]FOREVER[/color] (the assets won't be deleted). Also this may cause some crashes or bugs  in your game if you don't remove it from the WorldMap. Well, now it's your choice, life or death. Be wise."
+text = "So, you want to DELETE A LEVEL. If you click that button, the Level will be gone FOREVER (the assets won't be deleted). Also this may cause some crashes or bugs  in your game if you don't remove it from the WorldMap. Well, now it's your choice, life or death. Be wise."
+scroll_active = false
+
+[node name="Error" type="RichTextLabel" parent="DeleteLvl/Container"]
+visible = false
+margin_top = 78.0
+margin_right = 492.0
+margin_bottom = 108.0
+bbcode_enabled = true
+bbcode_text = "[color=red]WOW, seems like we got an error, check the console for details. The Level may (or may not) be deleted, so you might want to delete it manually."
+text = "WOW, seems like we got an error, check the console for details. The Level may (or may not) be deleted, so you might want to delete it manually."
+fit_content_height = true
 scroll_active = false
 
 [node name="KillButton" type="Button" parent="DeleteLvl/Container"]

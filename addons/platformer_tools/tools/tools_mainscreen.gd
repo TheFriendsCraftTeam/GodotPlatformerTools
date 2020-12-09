@@ -2,7 +2,7 @@ tool
 extends Control
 
 
-const default_options := {
+const DEFAULT_OPTIONS := {
 	"level_folder": "res://world/levels",
 	"world_folder": "res://world/maps",
 	"area_folder": "res://world/areas",
@@ -15,9 +15,9 @@ var level_nodes := {}
 
 
 func _ready() -> void:
-	$Tools/TopPanel/ToggleSidePanel.icon = get_icon("Forward", "EditorIcons")
+	$Tools/TopPanel/ToggleSidePanel.icon = get_icon("Forward", "EditorIcons")# Set an icon from the editor theme to a button
 	#$Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/Thumbnail/Change.icon = get_icon("Folder", "EditorIcons")
-	options = default_options.duplicate()# Load default options
+	options = DEFAULT_OPTIONS.duplicate()# Load default options
 
 	var options_file := File.new()
 	if options_file.open("user://platformer_tools/settings.set", File.READ) == OK:
@@ -27,10 +27,10 @@ func _ready() -> void:
 				options[key] = file_options[key]# Instance every user modification
 
 	options_file.close()
-	update_levels()
+	update_levels()# Update Levels on startup
 
 
-func _on_settings_updated() -> void:
+func _on_settings_updated() -> void:# Saves the options to a file (settings.set)
 	var options_file := File.new()
 	if options_file.open("user://platformer_tools/settings.set", File.WRITE) != OK:# Make the saving dir if it doesn't exist
 		var dir := Directory.new()
@@ -43,7 +43,7 @@ func _on_settings_updated() -> void:
 
 
 func update_levels():
-	levels = GameManager.update_levels(options.level_folder)
+	levels = GameManager.update_levels()
 	for tab in $Tools/CenterPanel/SidePanel/Container/Levels/Container.get_children():
 		if tab.name != "Lvl" and tab is VBoxContainer:
 			tab.queue_free()
@@ -61,32 +61,88 @@ func update_levels():
 
 
 func _on_level_created() -> void:
-	if $NewLvl/Container/LvlName.text == "":
+	update_levels()
+	var err: int = GameManager.make_level($NewLvl/Container/LvlName.text)
+	update_levels()
+	if err:
+		match err:
+			FAILED:
+				$NewLvl/Container/Error.bbcode_text = "[color=red]Wooza! Seems like we got a general error, watch the console to know more..."
+			ERR_INVALID_PARAMETER:
+				$NewLvl/Container/Error.bbcode_text = "[color=red]Ehm, you should insert a name for the Level..."
+			ERR_ALREADY_EXISTS:
+				$NewLvl/Container/Error.bbcode_text = "[color=red]Whops, seems like the Level mentioned here already exists..."
+			var id:
+				$NewLvl/Container/Error.bbcode_text = "[color=red]... Seems like we were not prepared for this type of error: " + String(id) + ". You should check out the docs."
 		$NewLvl/Container/Error.show()
-		yield(get_tree().create_timer(5.0), "timeout")
+		yield(get_tree().create_timer(4.0), "timeout")
 		$NewLvl/Container/Error.hide()
 		return
-	GameManager.make_level($NewLvl/Container/LvlName.text, options)
-	update_levels()
 	$NewLvl.hide()
 
 
 func delete_active_lvl() -> void:
+	if GameManager.delete_level(active_lvl):
+		$DeleteLvl/Container/Error.show()
+		yield(get_tree().create_timer(4.0), "timeout")
+		$DeleteLvl/Container/Error.hide()
+		return# Something went wrong
 	$DeleteLvl.hide()
-	GameManager.delete_level(active_lvl, options)
+
 	print("Level deleted, deleting nodes...")
 	print(level_nodes[active_lvl].size())
+
 	for node_id in level_nodes[active_lvl].size():
 		print("Node Id: " + String(node_id))
 		print(level_nodes[active_lvl][0].name)
 		_on_delete_node_request(level_nodes[active_lvl][0], active_lvl)
+	level_nodes.erase(active_lvl)
+
 	print("Updating...")
 	update_levels()
 	print("Done!")
 
 
-func rename_active_lvl() -> void:
-	pass
+func rename_active_lvl() -> void:# TODO: Fix bugs (rename to an existing lvl)
+	var new_id = $RenameLvl/Container/LvlName.text
+
+	update_levels()
+	var err: int = GameManager.rename_level(active_lvl, new_id)
+	update_levels()
+	if err:
+		match err:
+			FAILED:
+				$RenameLvl/Container/Error.bbcode_text = "[color=red]Wooza! Seems like we got a general error, watch the console to know more..."
+			ERR_INVALID_PARAMETER:
+				$RenameLvl/Container/Error.bbcode_text = "[color=red]Ehm, you should insert a name for the Level..."
+			ERR_FILE_NOT_FOUND:
+				$RenameLvl/Container/Error.bbcode_text = "[color=red]Whops, seems like the Level mentioned here doesn't exists..."
+			ERR_ALREADY_EXISTS:
+				$RenameLvl/Container/Error.bbcode_text = "[color=red]Ouch! Seems like there is already a Level with that id..."
+			var id:
+				$RenameLvl/Container/Error.bbcode_text = "[color=red]... Seems like we were not prepared for this type of error: " + String(id) + ". You should check out the docs."
+		$RenameLvl/Container/Error.show()
+		yield(get_tree().create_timer(4.0), "timeout")
+		$RenameLvl/Container/Error.hide()
+		return
+	$RenameLvl.hide()
+
+	print("Level renamed, renaming nodes...")
+	level_nodes[HandyFunctions.snake_case(new_id)] = []
+	print(level_nodes[HandyFunctions.snake_case(new_id)].size())
+
+	for node_id in level_nodes[active_lvl].size():
+		print("Node Id: " + String(node_id))
+		print(level_nodes[active_lvl][0].name)
+		level_nodes[active_lvl][0].title = new_id.capitalize()
+		level_nodes[HandyFunctions.snake_case(new_id)].append(level_nodes[active_lvl][0])
+		level_nodes[active_lvl].pop_front()
+
+	level_nodes.erase(active_lvl)
+
+	print("Updating...")
+	update_levels()
+	print("Done!")
 
 
 func _on_level_edit_requested(level):
@@ -109,7 +165,7 @@ func _on_level_delete_requested(level):
 
 func _on_level_add_requested(level: String):
 	print("Node add requested: " + level)
-	var lvl_node: GraphNode = $Tools/CenterPanel/Editors/MapEditor/LvlNode.duplicate(0) as GraphNode
+	var lvl_node: GraphNode = $Tools/CenterPanel/Editors/MapEditor/HiddenNodes/LvlNode.duplicate(0) as GraphNode
 	if typeof(level_nodes.get(level)) != TYPE_ARRAY:
 		level_nodes[level] = []
 
@@ -117,7 +173,6 @@ func _on_level_add_requested(level: String):
 	lvl_node.title = level.capitalize()
 	$Tools/CenterPanel/Editors/MapEditor.add_child(lvl_node)
 	lvl_node.connect("close_request", self, "_on_delete_node_request", [lvl_node, level])
-	lvl_node.show()
 
 	(level_nodes[level] as Array).append(lvl_node)
 

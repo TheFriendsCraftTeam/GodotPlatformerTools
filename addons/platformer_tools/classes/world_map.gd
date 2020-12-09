@@ -1,8 +1,8 @@
-extends Node2D
+extends Resource
 class_name WorldMap
 
 
-var world_name: String
-var connections: Array
-var Areas: Array
-var custom_data: Dictionary
+var connections := []
+var Areas := []
+var fancy_data := {}
+var custom_data := {}

@@ -16,7 +16,7 @@ var level_nodes := {}
 
 func _ready() -> void:
 	$Tools/TopPanel/ToggleSidePanel.icon = get_icon("Forward", "EditorIcons")# Set an icon from the editor theme to a button
-	#$Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/Thumbnail/Change.icon = get_icon("Folder", "EditorIcons")
+	#$Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl/Thumbnail/Change.icon = get_icon("Folder", "EditorIcons")
 	options = DEFAULT_OPTIONS.duplicate()# Load default options
 
 	var options_file := File.new()
@@ -44,19 +44,19 @@ func _on_settings_updated() -> void:# Saves the options to a file (settings.set)
 
 func update_levels():
 	levels = GameManager.update_levels()
-	for tab in $Tools/CenterPanel/SidePanel/Container/Levels/Container.get_children():
+	for tab in $Tools/CenterPanel/SidePanel/Levels/Levels/Container.get_children():
 		if tab.name != "Lvl" and tab is VBoxContainer:
 			tab.queue_free()
 
 	for level in levels.keys():
-		var lvl_tab := $Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl.duplicate(0)# New node, without instancing
+		var lvl_tab := $Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl.duplicate(0)# New node, without instancing
 		lvl_tab.get_node("LabelContainer/Label").text = level.capitalize()
 		(lvl_tab.get_node("EditAndAdd/Edit") as Button).connect("pressed", self, "_on_level_edit_requested", [level])
 		(lvl_tab.get_node("EditAndAdd/AddNode") as Button).connect("pressed", self, "_on_level_add_requested", [level])
 		(lvl_tab.get_node("RenameAndDelete/Rename") as Button).connect("pressed", self, "_on_level_rename_requested", [level])
 		(lvl_tab.get_node("RenameAndDelete/Delete") as Button).connect("pressed", self, "_on_level_delete_requested", [level])
 		lvl_tab.name = level
-		$Tools/CenterPanel/SidePanel/Container/Levels/Container.add_child(lvl_tab)
+		$Tools/CenterPanel/SidePanel/Levels/Levels/Container.add_child(lvl_tab)
 		lvl_tab.show()
 
 
@@ -198,7 +198,7 @@ func _on_SidePanel_toggled(button_pressed: bool) -> void:
 
 func _on_SizeBar_value_changed(value: float) -> void:
 	for level in levels.keys():
-		var lvl_thumbnail: TextureRect = get_node("Tools/CenterPanel/SidePanel/Container/Levels/Container/" + level + "/Thumbnail")
+		var lvl_thumbnail: TextureRect = get_node("Tools/CenterPanel/SidePanel/Levels/Levels/Container/" + level + "/Thumbnail")
 		lvl_thumbnail.rect_min_size.y = value
 		lvl_thumbnail.rect_size.y = value
 

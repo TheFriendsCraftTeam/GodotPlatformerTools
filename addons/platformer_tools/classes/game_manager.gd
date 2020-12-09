@@ -3,6 +3,8 @@ extends Node2D
 # Not putting class_name because it's a Singleton, but it's GameManager
 
 var levels := {}# All Levels go here
+var world_maps := {}# All WorldMaps go here
+
 const DEFAULT_FOLDERS := {
 	"levels": "res://world/levels",
 	"worlds": "res://world/maps",

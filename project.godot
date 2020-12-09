@@ -19,12 +19,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/platformer_tools/classes/handy_functions.gd"
 }, {
-"base": "Node2D",
+"base": "Resource",
 "class": "Level",
 "language": "GDScript",
 "path": "res://addons/platformer_tools/classes/level.gd"
 }, {
-"base": "Node2D",
+"base": "Resource",
 "class": "WorldMap",
 "language": "GDScript",
 "path": "res://addons/platformer_tools/classes/world_map.gd"

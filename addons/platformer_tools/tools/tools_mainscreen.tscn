@@ -156,17 +156,17 @@ margin_right = 178.0
 margin_bottom = 568.0
 rect_min_size = Vector2( 160, 0 )
 
-[node name="Container" type="VBoxContainer" parent="Tools/CenterPanel/SidePanel"]
+[node name="Levels" type="VBoxContainer" parent="Tools/CenterPanel/SidePanel"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 171.0
 margin_bottom = 561.0
 
-[node name="Top" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Container"]
+[node name="Top" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Levels"]
 margin_right = 164.0
 margin_bottom = 20.0
 
-[node name="SizeBar" type="HSlider" parent="Tools/CenterPanel/SidePanel/Container/Top"]
+[node name="SizeBar" type="HSlider" parent="Tools/CenterPanel/SidePanel/Levels/Top"]
 margin_right = 82.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
@@ -178,7 +178,7 @@ step = 45.0
 value = 90.0
 scrollable = false
 
-[node name="NewLvl" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Top"]
+[node name="NewLvl" type="Button" parent="Tools/CenterPanel/SidePanel/Levels/Top"]
 margin_left = 86.0
 margin_right = 164.0
 margin_bottom = 20.0
@@ -186,7 +186,7 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
 text = "New Level"
 
-[node name="Levels" type="ScrollContainer" parent="Tools/CenterPanel/SidePanel/Container"]
+[node name="Levels" type="ScrollContainer" parent="Tools/CenterPanel/SidePanel/Levels"]
 margin_top = 24.0
 margin_right = 164.0
 margin_bottom = 554.0
@@ -194,7 +194,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="Container" type="VBoxContainer" parent="Tools/CenterPanel/SidePanel/Container/Levels"]
+[node name="Container" type="VBoxContainer" parent="Tools/CenterPanel/SidePanel/Levels/Levels"]
 margin_right = 164.0
 margin_bottom = 530.0
 rect_min_size = Vector2( 160, 0 )
@@ -204,28 +204,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lvl" type="VBoxContainer" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container"]
+[node name="Lvl" type="VBoxContainer" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container"]
 visible = false
 margin_right = 164.0
 margin_bottom = 156.0
 
-[node name="LabelContainer" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl"]
+[node name="LabelContainer" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl"]
 margin_right = 164.0
 margin_bottom = 14.0
 custom_constants/separation = 2
 
-[node name="Label" type="Label" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/LabelContainer"]
+[node name="Label" type="Label" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl/LabelContainer"]
 margin_right = 91.0
 margin_bottom = 14.0
 text = "Test Level Tab"
 
-[node name="Line" type="HSeparator" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/LabelContainer"]
+[node name="Line" type="HSeparator" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl/LabelContainer"]
 margin_left = 93.0
 margin_right = 164.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 
-[node name="Thumbnail" type="TextureRect" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl"]
+[node name="Thumbnail" type="TextureRect" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl"]
 margin_top = 18.0
 margin_right = 164.0
 margin_bottom = 108.0
@@ -234,7 +234,7 @@ size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 6
 
-[node name="Button" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/Thumbnail"]
+[node name="Button" type="Button" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl/Thumbnail"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/hover = SubResource( 5 )
@@ -247,37 +247,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EditAndAdd" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl"]
+[node name="EditAndAdd" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl"]
 margin_top = 112.0
 margin_right = 164.0
 margin_bottom = 132.0
 
-[node name="Edit" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/EditAndAdd"]
+[node name="Edit" type="Button" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl/EditAndAdd"]
 margin_right = 56.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 disabled = true
 text = "Edit"
 
-[node name="AddNode" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/EditAndAdd"]
+[node name="AddNode" type="Button" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl/EditAndAdd"]
 margin_left = 60.0
 margin_right = 164.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Add as a Node"
 
-[node name="RenameAndDelete" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl"]
+[node name="RenameAndDelete" type="HBoxContainer" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl"]
 margin_top = 136.0
 margin_right = 164.0
 margin_bottom = 156.0
 
-[node name="Rename" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/RenameAndDelete"]
+[node name="Rename" type="Button" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl/RenameAndDelete"]
 margin_right = 65.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Rename"
 
-[node name="Delete" type="Button" parent="Tools/CenterPanel/SidePanel/Container/Levels/Container/Lvl/RenameAndDelete"]
+[node name="Delete" type="Button" parent="Tools/CenterPanel/SidePanel/Levels/Levels/Container/Lvl/RenameAndDelete"]
 margin_left = 69.0
 margin_right = 164.0
 margin_bottom = 20.0
@@ -560,8 +560,8 @@ margin_right = 492.0
 margin_bottom = 132.0
 text = "Yes, KILL it. (-500 karma)"
 [connection signal="toggled" from="Tools/TopPanel/ToggleSidePanel" to="." method="_on_SidePanel_toggled"]
-[connection signal="value_changed" from="Tools/CenterPanel/SidePanel/Container/Top/SizeBar" to="." method="_on_SizeBar_value_changed"]
-[connection signal="pressed" from="Tools/CenterPanel/SidePanel/Container/Top/NewLvl" to="NewLvl" method="popup"]
+[connection signal="value_changed" from="Tools/CenterPanel/SidePanel/Levels/Top/SizeBar" to="." method="_on_SizeBar_value_changed"]
+[connection signal="pressed" from="Tools/CenterPanel/SidePanel/Levels/Top/NewLvl" to="NewLvl" method="popup"]
 [connection signal="connection_request" from="Tools/CenterPanel/Editors/MapEditor" to="." method="_on_MapEditor_connection_request"]
 [connection signal="disconnection_request" from="Tools/CenterPanel/Editors/MapEditor" to="." method="_on_MapEditor_disconnection_request"]
 [connection signal="pressed" from="NewLvl/Container/Buttons/Cancel" to="NewLvl" method="hide"]

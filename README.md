@@ -16,6 +16,7 @@ All of them (and the other classes), work together and are "controlled" with the
 This addon (as you can probably see) is current in development version and it's not meant to be used in any game (for now), but if you just want to give it a look and maybe add you own stuff I won't stop you. :wink:
 
 ## Some features
+[Current Milestone](https://github.com/TheFriendsCraftTeam/GodotPlatformerTools/milestone/1)
 ### Current:
 - [x] It exist!!
 - [x] ControlledBody custom class (for players, enemies, and other objects)
